@@ -15,7 +15,3 @@ Utils::addRoute('transactions', 'TransactionControllers');
 Utils::addRoute('sorting', 'SortingControllers');
 Utils::addRoute('budgetAnalysis', 'BudgetAnalysisController');
 Utils::addRoute('goals', 'GoalsController');
-Utils::addRoute('adminUsers', 'AdminController', ['admin']);
-Utils::addRoute('adminCategories', 'AdminController', ['admin']);
-Utils::addRoute('deleteUser', 'AdminController', ['admin']);
-Utils::addRoute('deleteCategory', 'AdminController', ['admin']);
