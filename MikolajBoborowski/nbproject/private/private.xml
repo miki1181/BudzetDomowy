@@ -11,14 +11,15 @@
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/controllers/TransactionControllers.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/core/Messages.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/core/Validator.class.php</file>
+            <file>file:/C:/xampp/htdocs/MikolajBoborowski/core/Utils.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/core/Router.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/sorting.tpl</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/core/Message.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/controllers/GoalsController.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/public/index.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/routing.php</file>
-            <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/admin_categories.tpl</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/ctrl.php</file>
+            <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/adminPanel.tpl</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/onload_db.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/controllers/SortingControllers.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/controllers/UserControllers.class.php</file>
@@ -26,7 +27,6 @@
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/controllers/BudgetAnalysisController.class.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/templates/main.tpl</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/core/App.class.php</file>
-            <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/admin_users.tpl</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/register.tpl</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/index.php</file>
             <file>file:/C:/xampp/htdocs/MikolajBoborowski/app/views/transactions.tpl</file>

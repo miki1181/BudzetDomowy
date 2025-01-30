@@ -34,6 +34,11 @@
                                <li class="nav-item">
                                         <a class="nav-link" href="goals">Cele Oszczędnościowe</a> 
                                     </li>
+                                   {if isset($smarty.session.user.role_id) && $smarty.session.user.role_id == 1}
+    <li class="nav-item">
+        <a class="nav-link" href="adminPanel">Panel Admina</a>
+    </li>
+{/if}
                                 <li class="nav-item">
                                     <a class="nav-link" href="logout">Wyloguj</a>
                                 </li>

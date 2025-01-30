@@ -40,7 +40,7 @@ class UserControllers {
 
 
 
-     public function action_login() {
+    public function action_login() {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
@@ -53,11 +53,18 @@ class UserControllers {
         } elseif (!password_verify($password, $user['haslo'])) {
             App::getMessages()->addMessage(new \core\Message('Nieprawidłowy email lub hasło.', \core\Message::ERROR));
         } else {
-            // Logowanie zakończone sukcesem
+            // Pobranie roli użytkownika z tabeli role_uzytkownikow
+            $roleId = App::getDB()->get('role_uzytkownikow', 'rola_id', [
+                'uzytkownik_id' => $user['id']
+            ]);
+
+            // Logowanie zakończone sukcesem - ustawienie sesji z informacjami o użytkowniku
             $_SESSION['user'] = [
                 'id' => $user['id'],
-                'email' => $user['email']
+                'email' => $user['email'],
+                'role_id' => $roleId  // Dodanie ID roli do sesji
             ];
+
             App::getMessages()->addMessage(new \core\Message('Zalogowano pomyślnie.', \core\Message::INFO));
             App::getRouter()->redirectTo('home'); // Przekierowanie na stronę główną
         }
@@ -66,6 +73,7 @@ class UserControllers {
     App::getSmarty()->assign("email", $email);
     App::getSmarty()->display("login.tpl");
 }
+
 public function action_logout() {
     session_start(); // Upewnij się, że sesja jest zainicjalizowana
     session_destroy(); // Usunięcie sesji

@@ -15,3 +15,5 @@ Utils::addRoute('transactions', 'TransactionControllers');
 Utils::addRoute('sorting', 'SortingControllers');
 Utils::addRoute('budgetAnalysis', 'BudgetAnalysisController');
 Utils::addRoute('goals', 'GoalsController');
+Utils::addRoute('adminPanel', 'AdminController');
+Utils::addRoute('promoteToAdmin', 'AdminController');
