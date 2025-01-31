@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2025-01-30 14:43:26
+/* Smarty version 4.3.4, created on 2025-01-31 16:07:35
   from 'C:\xampp\htdocs\MikolajBoborowski\app\views\budgetAnalysis.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_679b81fe0b49d3_26579987',
+  'unifunc' => 'content_679ce7373b1c88_67697090',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfbf1246de32550635751bb176e98fb8472cb8aa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MikolajBoborowski\\app\\views\\budgetAnalysis.tpl',
-      1 => 1738010843,
+      1 => 1738334948,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_679b81fe0b49d3_26579987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_679ce7373b1c88_67697090 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_217239108679b81fdd2f813_58739384', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_467849046679ce73739eb19_74994869', "title");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53767035679b81fdd31715_56782453', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_602099337679ce73739f594_52929490', "content");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "templates/main.tpl");
 }
 /* {block "title"} */
-class Block_217239108679b81fdd2f813_58739384 extends Smarty_Internal_Block
+class Block_467849046679ce73739eb19_74994869 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_217239108679b81fdd2f813_58739384',
+    0 => 'Block_467849046679ce73739eb19_74994869',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ Analiza Budżetu<?php
 }
 /* {/block "title"} */
 /* {block "content"} */
-class Block_53767035679b81fdd31715_56782453 extends Smarty_Internal_Block
+class Block_602099337679ce73739f594_52929490 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_53767035679b81fdd31715_56782453',
+    0 => 'Block_602099337679ce73739f594_52929490',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

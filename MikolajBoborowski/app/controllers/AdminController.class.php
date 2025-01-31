@@ -19,7 +19,7 @@ class AdminController {
 
         // Sprawdzenie, czy użytkownik ma rolę admina
         $roleId = App::getDB()->get('role_uzytkownikow', 'rola_id', ['uzytkownik_id' => $userId]);
-        if ($roleId !== 1) {
+        if ($roleId != 1) {
             App::getMessages()->addMessage(new Message("Brak dostępu. Tylko administratorzy mają dostęp do tego panelu.", Message::ERROR));
             App::getRouter()->redirectTo('transactions');
             return;
@@ -61,7 +61,7 @@ public function action_promoteToAdmin() {
     $userId = $_SESSION['user']['id'];
     $roleId = App::getDB()->get('role_uzytkownikow', 'rola_id', ['uzytkownik_id' => $userId]);
 
-    if ($roleId !== 1) {
+    if ($roleId != 1) {
         App::getMessages()->addMessage(new Message("Brak dostępu do tej akcji.", Message::ERROR));
         App::getRouter()->redirectTo('adminPanel');
         return;
@@ -72,13 +72,21 @@ public function action_promoteToAdmin() {
         $promoteUserId = intval($_POST['promote_user_id']);
         
         // Aktualizacja roli użytkownika w bazie danych
-        $updateResult = App::getDB()->update('role_uzytkownikow', ['rola_id' => 1], ['uzytkownik_id' => $promoteUserId]);
+       $existingRole = App::getDB()->get('role_uzytkownikow', 'rola_id', ['uzytkownik_id' => $promoteUserId]);
 
-        if ($updateResult->rowCount() > 0) {
-            App::getMessages()->addMessage(new Message("Użytkownikowi nadano uprawnienia administratora.", Message::INFO));
-        } else {
-            App::getMessages()->addMessage(new Message("Nie udało się nadać uprawnień administratora.", Message::ERROR));
-        }
+if (!$existingRole) {
+    // Dodaj nowy rekord z rolą administratora
+    App::getDB()->insert('role_uzytkownikow', [
+        'uzytkownik_id' => $promoteUserId,
+        'rola_id' => 1,
+        'data_przypisania' => date('Y-m-d H:i:s')
+    ]);
+    App::getMessages()->addMessage(new Message("Użytkownik został promowany na administratora.", Message::INFO));
+} else {
+    // Aktualizacja istniejącej roli
+    App::getDB()->update('role_uzytkownikow', ['rola_id' => 1], ['uzytkownik_id' => $promoteUserId]);
+    App::getMessages()->addMessage(new Message("Użytkownikowi nadano uprawnienia administratora.", Message::INFO));
+}
     }
 
     // Przekierowanie z powrotem do panelu admina

@@ -22,42 +22,48 @@
                                 <a class="nav-link" href="main">Strona główna</a>
                             </li>
                             {if isset($smarty.session.user)}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="transactions">Transakcje</a>
-                                </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="sorting">Sortowanie i Filtrowanie</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="budgetAnalysis">Analiza Budżetu</a>
-                                </li>
-                               <li class="nav-item">
-                                        <a class="nav-link" href="goals">Cele Oszczędnościowe</a> 
-                                    </li>
-                                   {if isset($smarty.session.user.role_id) && $smarty.session.user.role_id == 1}
-    <li class="nav-item">
-        <a class="nav-link" href="adminPanel">Panel Admina</a>
-    </li>
-{/if}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="logout">Wyloguj</a>
-                                </li>
-                            {else}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="login">Logowanie</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="register">Rejestracja</a>
-                                </li>
-                            {/if}
-                        </ul>
+        {if $smarty.session.user.role_id != 1} 
+            <li class="nav-item">
+                <a class="nav-link" href="transactions">Transakcje</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sorting">Sortowanie i Filtrowanie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="budgetAnalysis">Analiza Budżetu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="goals">Cele Oszczędnościowe</a>
+            </li>
+        {/if}
+        
+        {if $smarty.session.user.role_id == 1}
+            <li class="nav-item">
+                <a class="nav-link" href="adminPanel">Panel Admina</a>
+            </li>
+        {/if}
+
+        <li class="nav-item">
+            <a class="nav-link" href="logout">Wyloguj</a>
+        </li>
+    {else}
+        <li class="nav-item">
+            <a class="nav-link" href="login">Logowanie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="register">Rejestracja</a>
+        </li>
+    {/if}
+</ul>
                     </div>
                 </div>
             </nav>
         </div>
+
     </header>
 
-    <main class="container my-4">
+    <main class="container my-4 ">
+        
         {block name="content"}{/block}
     </main>
 

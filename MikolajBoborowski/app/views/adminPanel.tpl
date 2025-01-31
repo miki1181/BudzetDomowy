@@ -28,11 +28,13 @@
             <tr>
                 <td>{$user.email}</td>
                 <td>
-                    <form method="post">
-                        <input type="hidden" name="delete_user_id" value="{$user.id}">
-                        <button type="submit" class="btn btn-danger">Usuń</button>
-                    </form>
-                </td>
+    {if $user.nazwa_roli != 'admin'}
+        <form method="post">
+            <input type="hidden" name="delete_user_id" value="{$user.id}">
+            <button type="submit" class="btn btn-danger">Usuń</button>
+        </form>
+    {/if}
+</td>
                 <td>
                     {if $user.nazwa_roli != 'admin'}
                         <form method="post" action="promoteToAdmin">

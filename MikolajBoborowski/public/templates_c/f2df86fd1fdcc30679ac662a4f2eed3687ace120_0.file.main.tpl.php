@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2025-01-30 19:57:06
+/* Smarty version 4.3.4, created on 2025-01-31 16:02:36
   from 'C:\xampp\htdocs\MikolajBoborowski\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_679bcb82e791b0_74444580',
+  'unifunc' => 'content_679ce60cf1cb34_19743396',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2df86fd1fdcc30679ac662a4f2eed3687ace120' => 
     array (
       0 => 'C:\\xampp\\htdocs\\MikolajBoborowski\\app\\views\\templates\\main.tpl',
-      1 => 1738263426,
+      1 => 1738334949,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_679bcb82e791b0_74444580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_679ce60cf1cb34_19743396 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -32,7 +32,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_767781789679bcb82e73bc4_35996586', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_427063988679ce60cf0c617_22611402', "title");
 ?>
 </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,44 +52,50 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_767781789679bcb82e
                                 <a class="nav-link" href="main">Strona główna</a>
                             </li>
                             <?php if ((isset($_SESSION['user']))) {?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="transactions">Transakcje</a>
-                                </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="sorting">Sortowanie i Filtrowanie</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="budgetAnalysis">Analiza Budżetu</a>
-                                </li>
-                               <li class="nav-item">
-                                        <a class="nav-link" href="goals">Cele Oszczędnościowe</a> 
-                                    </li>
-                                   <?php if ((isset($_SESSION['user']['role_id'])) && $_SESSION['user']['role_id'] == 1) {?>
-    <li class="nav-item">
-        <a class="nav-link" href="adminPanel">Panel Admina</a>
-    </li>
-<?php }?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="logout">Wyloguj</a>
-                                </li>
-                            <?php } else { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="login">Logowanie</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="register">Rejestracja</a>
-                                </li>
-                            <?php }?>
-                        </ul>
+        <?php if ($_SESSION['user']['role_id'] != 1) {?> 
+            <li class="nav-item">
+                <a class="nav-link" href="transactions">Transakcje</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sorting">Sortowanie i Filtrowanie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="budgetAnalysis">Analiza Budżetu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="goals">Cele Oszczędnościowe</a>
+            </li>
+        <?php }?>
+        
+        <?php if ($_SESSION['user']['role_id'] == 1) {?>
+            <li class="nav-item">
+                <a class="nav-link" href="adminPanel">Panel Admina</a>
+            </li>
+        <?php }?>
+
+        <li class="nav-item">
+            <a class="nav-link" href="logout">Wyloguj</a>
+        </li>
+    <?php } else { ?>
+        <li class="nav-item">
+            <a class="nav-link" href="login">Logowanie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="register">Rejestracja</a>
+        </li>
+    <?php }?>
+</ul>
                     </div>
                 </div>
             </nav>
         </div>
+
     </header>
 
-    <main class="container my-4">
+    <main class="container my-4 ">
+        
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_54608514679bcb82e78c43_75554659', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_891989221679ce60cf1c455_03073745', "content");
 ?>
 
     </main>
@@ -106,12 +112,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_54608514679bcb82e7
 </body>
 </html><?php }
 /* {block "title"} */
-class Block_767781789679bcb82e73bc4_35996586 extends Smarty_Internal_Block
+class Block_427063988679ce60cf0c617_22611402 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_767781789679bcb82e73bc4_35996586',
+    0 => 'Block_427063988679ce60cf0c617_22611402',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -121,12 +127,12 @@ Budżet Domowy<?php
 }
 /* {/block "title"} */
 /* {block "content"} */
-class Block_54608514679bcb82e78c43_75554659 extends Smarty_Internal_Block
+class Block_891989221679ce60cf1c455_03073745 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_54608514679bcb82e78c43_75554659',
+    0 => 'Block_891989221679ce60cf1c455_03073745',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
